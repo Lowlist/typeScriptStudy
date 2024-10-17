@@ -71,7 +71,6 @@ function 함수5(x : number | string) : void{
     } else {
         console.log("숫자아님")
     }
-    // x + 4;
 }
 함수5(123);
 함수5("ㅋㅋ");
@@ -109,3 +108,57 @@ function 결혼중개사(money : number, house:boolean, charming:string){
 }
 
 결혼중개사(500,false,"상");
+
+
+/** 
+ * type Narrowing
+ * if 썼으면 끝까지 써야 안전
+ * else / else if 안쓰면 에러로 잡아줄 수도 있음
+ * ---Narrowing으로 판정해주는 문법들---
+ * typeof 변수
+ * 속성명 in 오브젝트자료
+ * 인스턴스 instanceof 부모
+ */
+
+function 함수6(x : number | string){
+    let array :number[] = [];
+    if(typeof x === "number"){
+        array[0] = x;
+    }
+
+}
+
+/**
+ * Assertion 문법 (타입 덮어쓰기)
+ * 1. Narrowing 할 때 사용 ( 타입을 a에서 b로 변경 x)
+ * 2. 무슨 타입이 들어올지 100% 확실할 때 쓰는게 좋음 ( if와 다르게 에러로 안잡아줌 )
+ */
+
+function 함수7(x : number | string){
+    let array :number[] = [];
+    array[0] = x as number;
+}
+
+
+// 숙제 1
+function cleaningArray(array : (number|string)[]){
+    let cleanArray : number[] = [];
+    array.forEach((element) => {
+        if(typeof element === "string"){
+            cleanArray.push(parseInt(element));
+        } else {
+            cleanArray.push(element);
+        }
+    });
+    console.log(cleanArray)
+}
+cleaningArray([1,2,'3',4,'5'])
+
+// 숙제 2
+let 철수쌤 = { subject : 'math' }
+let 영희쌤 = { subject : ['science', 'english'] }
+let 민수쌤 = { subject : ['science', 'art', 'korean'] }
+
+function objCheck(  ){
+
+}
