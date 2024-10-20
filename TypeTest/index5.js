@@ -22,6 +22,14 @@
 // if (링크 instanceof HTMLAnchorElement){
 //     링크.href = 'https://kakao.com';
 // }
+/**
+ *  2020년 이후 브라우저들은 ?. 연산자를 이용가능합니다.
+    그니까 object에서 자료뽑을 때 object.어쩌구 이렇게 자료를 뽑는데
+    object?.어쩌구 이렇게도 뽑을 수 있다는 겁니다.
+    이걸 쓰면 어쩌구라는 자료가 object에 존재하면 그거 뽑아주시고요
+    존재하지 않으면 undefined 남겨주세요~ 라는 뜻과 동일합니다.
+    그래서 간혹 narrowing할 때 && 연산자로 undefined 체크하기 귀찮을 때 간혹 사용됩니다.
+ */
 var 버튼 = document.getElementById('button');
 버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener('click', function () {
     console.log('안녕');
