@@ -30,7 +30,20 @@
     존재하지 않으면 undefined 남겨주세요~ 라는 뜻과 동일합니다.
     그래서 간혹 narrowing할 때 && 연산자로 undefined 체크하기 귀찮을 때 간혹 사용됩니다.
  */
-var 버튼 = document.getElementById('button');
-버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener('click', function () {
-    console.log('안녕');
+// let 버튼 = document.getElementById('button');
+// 버튼?.addEventListener('click',function(){
+//     console.log('안녕');
+// })
+// 숙제 1
+// let 이미지 = document.getElementById('img');
+// if(이미지 instanceof HTMLImageElement){
+//     이미지.src = 'test33.jpg';
+// }
+// 숙제 2
+var 링크들 = document.querySelectorAll('.link');
+// forEach로 해결하긴했음
+링크들.forEach(function (a) {
+    if (a instanceof HTMLAnchorElement) {
+        a.href = "https://kakao.com";
+    }
 });
